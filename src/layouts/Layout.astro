@@ -125,7 +125,7 @@ const { metaTags } = Astro.props;
 		
 		<script is:inline>
 			// @ts-nocheck
-			const { StoryblokBridge, location } = window
+			const { StoryblokBridge } = window
 
 			const storyblokInstance = new StoryblokBridge({
 				resolveLinks: "url"
@@ -133,7 +133,7 @@ const { metaTags } = Astro.props;
 			
 			storyblokInstance.on(['published', 'change'], () => {
 					// reload page if save or publish is clicked
-					// location.reload(true)
+					location.reload(true)
 			})
 			storyblokInstance.pingEditor(() => {
 				if (storyblokInstance.isInEditor()) {
