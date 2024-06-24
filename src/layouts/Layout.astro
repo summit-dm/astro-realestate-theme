@@ -120,6 +120,21 @@ const { metaTags } = Astro.props;
 				ss.add(textIn).add(overlayClip)
 			}
 		</script>
+		<script src="//app.storyblok.com/f/storyblok-v2-latest.js" type="text/javascript">
+		</script>
+		<script is:inline>
+			// @ts-nocheck
+			const { StoryblokBridge, location } = window
+
+			const storyblokInstance = new StoryblokBridge({
+				resolveLinks: "url"
+			})
+			
+			storyblokInstance.on(['published', 'change'], () => {
+					// reload page if save or publish is clicked
+					location.reload(true)
+			})
+		</script>
 	</body>
 </html>
 <style is:global>
