@@ -128,7 +128,7 @@ const { metaTags } = Astro.props;
 			const { StoryblokBridge } = window
 
 			const storyblokInstance = new StoryblokBridge({
-				// resolveLinks: "url"
+				resolveLinks: "url"
 			})
 			
 			storyblokInstance.on(['published', 'change'], (event) => {
