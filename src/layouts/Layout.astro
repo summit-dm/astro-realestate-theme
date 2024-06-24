@@ -133,7 +133,7 @@ const { metaTags } = Astro.props;
 			
 			storyblokInstance.on(['published', 'change'], () => {
 					// reload page if save or publish is clicked
-					location.reload(true)
+					// location.reload(true)
 			})
 			storyblokInstance.pingEditor(() => {
 				if (storyblokInstance.isInEditor()) {
@@ -141,6 +141,7 @@ const { metaTags } = Astro.props;
 						console.log("storyblok editor")
 				} else {
 							// load the published version
+							console.log("storyblok editor not connected")
 				}
 			})
 		</script>
