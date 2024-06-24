@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
   const { data } = await storyblokApi.get('cdn/stories', {
     level: 1,
-    excluding_slugs: 'home,config',
+    excluding_slugs: 'home,config,test-post',
     // try draft version to load editor
     version: "draft",
     // version: import.meta.env.DEV ? "draft" : "published",
